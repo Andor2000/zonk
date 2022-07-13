@@ -45,3 +45,25 @@ function rejim_risk_form(){
     viigrish = Math.floor(stavka * rejim_risk_koef)
     document.getElementById("risk_viigrish_text").textContent = viigrish;
 }
+
+// нажал на стакан
+function play_stakan_click(){
+    setTimeout(play_stakan_rotate, 0, 0.3, 40);
+    setTimeout(play_stakan_rotate, 300, 0.1, -45);
+    setTimeout(play_stakan_rotate, 500, 0.2, 25);
+    setTimeout(play_stakan_rotate, 700, 0.2, -45);
+    setTimeout(play_stakan_rotate, 900, 0.2, 25);
+    setTimeout(play_stakan_rotate, 1100, 0.2, -45);
+    setTimeout(play_stakan_rotate, 1300, 0.2, 25);
+    setTimeout(play_stakan_rotate, 1500, 0.2, -45);
+    setTimeout(play_stakan_rotate, 1700, 0.2, 25);
+
+    
+    setTimeout(play_stakan_rotate, 1900, 0, 0);
+}
+
+function play_stakan_rotate(time, grad){
+    document.getElementById('play_stakan').style.transform = time + "s";
+    document.getElementById('play_stakan').style.transform = "rotate(" + grad +"deg)";
+}
+

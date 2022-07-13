@@ -19,7 +19,7 @@
                             <div style="margin-left: 10px; ">
                                 <img src="img/fishka.png" class="fishki_photo" alt="Фото фишки">
                             </div>
-                            <div id="range_risk_text" style="color:aliceblue">ну да, тут написана фигня, зато ты нашёл</div>
+                            <div id="range_risk_text" style="color:rgb(255, 199, 30)">ну да, тут написана фигня, зато ты нашёл</div>
                         </div>
                         
                         <input style="margin-top:10px" type="range" min="1" max="50" value="25" class="slider" id="range_risk" oninput="range_risk()">
@@ -64,7 +64,7 @@
                         <div style="margin-left: 10px; ">
                                 <img src="img/fishka.png" class="fishki_photo" alt="Фото фишки">
                             </div>
-                        <p id="risk_viigrish_text"> 
+                        <p id="risk_viigrish_text" style="color:rgb(255, 199, 30)"> 
                             тут тоже фигня, но какая разница??
                         </p>
                     </div>
