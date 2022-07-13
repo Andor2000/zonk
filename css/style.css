@@ -1,0 +1,418 @@
+:root {
+  --height--play_form: 480px;
+}
+.body_fon {
+    background: linear-gradient(#461b38 15%, #131230 75%) fixed;
+    user-select:none; /* запрет выделения слов*/
+  }
+
+.container{
+  width: 900px;
+}
+ /* header */
+.header{
+  display: flex;
+  justify-content: space-between
+}
+.avatar{
+  display: flex;
+}
+
+.avatar_photo{
+  width: 50px;
+  margin-top: 13px;
+  margin-left: 13px;
+  pointer-events: none; /* запрет перетаскивания фото*/
+}
+
+.avatar_info{
+  margin-top: 13px;
+  margin-left: 13px;
+}
+
+.avatar_name{
+  color: #ffffff;
+}
+
+.avatar_status{
+  color :rgb(163, 224, 84);
+}
+
+.money{
+  width: 300px;
+  height: 30px;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fishki{
+  background:rgb(39, 18, 33);
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fishki_photo{
+  pointer-events: none; /* запрет перетаскивания фото*/
+  width: 30px;
+}
+.fishki_value{
+  color:white;
+  margin-top: 3px;
+  margin-right: 13px;
+}
+/*  тело */
+.main_form{
+  text-align: center;
+
+}
+
+.rejimi{
+   display: flex;
+   margin-left: auto;
+   Justify-content: center;
+   margin-top: 80px;
+}
+
+.rejim_form{
+  width:180px;
+  height:270px;
+  border-radius: 20px;
+  background:rgb(64, 35, 79);
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 30px;
+  color: rgb(238, 238, 238);
+  overflow-wrap: break-word;
+}
+
+.rejim_form_telo{
+  width:180px;
+  height:190px;
+  border-radius: 20px 20px 0px 0px;
+  background:rgb(64, 35, 79);
+  display: block;
+  justify-content: center;
+
+}
+
+.rejim_form_photo{
+  pointer-events: none; /* запрет перетаскивания фото*/
+  height: 130px;
+  margin-left: 10px;
+  margin-top: -70px;
+}
+
+.rejim_form_button{
+  justify-content: center;
+  margin-top: 15px;
+  margin-left: 10px;
+  width: 160px;
+  height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(210, 49, 128);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  opacity: 1;
+  font-size: 26px;
+  color: rgb(238, 238, 238);
+  border:none;
+}
+
+.rejim_form_button:hover{
+  background-color: rgb(247, 72, 157);
+
+}
+.rejim_form_foot{
+  width:180px;
+  height:80px;
+  border-radius: 0px 0px 20px 20px;
+  background:rgb(42, 23, 53);
+}
+
+.rejim_form_foot_rekord{
+  height:20px;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+.rejim_form_foot_value{
+  height:20px;
+  font-size: 26px;
+  margin-bottom: 2px;
+  color: rgb(210, 49, 128);
+}
+
+.rejim_form_foot_value_text{
+  height:20px;
+  font-size: 18px;
+   color: rgb(210, 49, 128);
+
+}
+
+/* Модальное окно риса */
+.rejim_risk_modal_vibor{
+  width: 530px;
+  height: 500px;
+  margin-top: 75px;
+  border-radius: 15px;
+  background: linear-gradient(rgb(57, 23, 63), rgb(73, 29, 80));
+  text-align: center;
+}
+.rejim_risk_modal_vibor_name button{
+  background:transparent;
+  border: none;
+}
+.b-close{
+  right: 20px;
+  height: 20px;
+}
+.rejim_risk_modal_vibor_name{
+  width: 100%;
+  height: 50px;
+  background-color: rgb(44, 17, 48);
+  border-radius: 15px 15px 0px 0px;
+  border-bottom: none;
+  color:#ffffff;
+}
+
+
+.rejim_risk_modal_vibor_name > h5{
+  margin-left: 45%;
+  color:rgb(255, 255, 255);;
+}
+
+.rejim_risk_modal_vibor_text{
+    display: block;
+    opacity: 1;
+    font-family: CuprumItalic;
+    font-size: 18px;
+    color: rgb(238, 238, 238);
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+/* Ползунок выбора ставки */
+.slidecontainer {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 70%;
+  height: 25px;
+  background: rgb(210, 49, 128);
+  outline: none;
+  border-radius: 15px;
+}
+
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background: rgb(238, 238, 238);
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #ff0000;
+  cursor: pointer;
+}
+
+/* Выбор ставки */
+.rejim_risk_vibor_stavki{
+  margin-top: 30px;
+  width: 80%;
+  justify-content: center;
+  text-align: center;
+  display:flex;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rejim_risk_vibor_stavki_value{
+  display: block;
+  background:rgb(64, 32, 81);
+  margin-left: 5px;
+  width: 20%;
+  height: 80px;
+  border-radius:15px;
+  cursor:pointer;
+}
+
+.rejim_risk_vibor_stavki_value_stavka{
+  margin-top: 3px;
+  color:rgb(255, 199, 30);
+  font-size: 20px;
+  height: 20px;
+}
+.rejim_risk_vibor_stavki_value_text{
+  color:#ffffff;
+  font-size: 18px;
+  height: 15px;
+  margin-bottom: 7px;
+}
+.rejim_risk_vibor_stavki_value_prochent{
+  color: rgb(255, 199, 30);
+  font-size: 22px;
+  height: 20px;
+}
+
+/* ИГРОВОЕ ПОЛЕ */
+
+.form_play{
+  width: 100%;
+  height: 500px;
+  margin-top: 15px;
+  display: flex;
+}
+/* Счетчик очков */
+.play_chetchik{
+  width: 20%;
+  height: var(--height--play_form);
+}
+.play_chetchik_raund{
+  width: 100%;
+  display: flex;
+  font-size: 24px;
+}
+.play_chetchik_raund_number{
+  width: 35%;
+  color:#ffffff;
+  text-align: right;
+}
+.play_chetchik_raund_value{
+  width: 65%;
+  color:#ffffff;
+  text-align: right;
+  padding-right: 20%;
+}
+.play_chetchik_chet{
+  color:#ffffff;
+  font-size: 26px;
+  margin: 10px;
+}
+
+.play_chetchik_button{
+  text-align: center;
+  width: 160px;
+  height: 40px;
+  background-color: rgb(210, 49, 128);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  opacity: 1;
+  font-size: 26px;
+  color: rgb(238, 238, 238);
+  border:none;
+}
+/* Игровое поле */
+.play_pole{
+  width: 40%;
+  height: var(--height--play_form);
+  background: rgb(20, 14, 35);
+}
+
+.play_mesto_kubika{
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(44, 20, 80);
+  border-radius: 5px;
+  display: block;
+}
+/* Ползунок набранных очков */
+.play_range_chetchik{
+  width: 20%;
+  height: var(--height--play_form);
+  text-align: center;
+}
+
+.play_range_chetchik_viigrish{
+  height: 15%;
+}
+
+.play_range_chetchik_viigrish_text{
+  font-size: 22px;
+  color:#ffffff;
+  font-style: italic;
+}
+
+.play_range_chetchik_viigrish_value{
+  display: flex;
+  justify-content: center;
+  color:rgb(246, 198, 74);
+  font-size: 22px;
+  font-style: italic;
+}
+
+.play_range_chetchik_range{
+  height: 70%;
+  margin: auto;
+  display: flex;
+}
+
+.play_range_chetchik_range_form{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.play_range_chetchik_range_objee{
+  /* rgb(193, 65, 126) */
+  background:rgb(26, 14, 28);
+  width: 10%;
+  height: 90%;
+  margin-left: 45%;
+  margin-top: 10%;
+  border-radius: 10px;
+  position: relative;
+}
+.play_range_chetchik_range_value{
+  background: rgb(193, 65, 126);
+  width: 10%;
+  height: 10%;
+  margin-left: -10%;
+  margin-top: 164%;
+  border-radius: 10px;
+  position: relative;
+}
+
+.play_range_chetchik_trebuetsa{
+  height: 15%;
+}
+
+.play_range_chetchik_trebuetsa_text{
+  color:#ffffff;
+  font-style: italic;
+  font-size: 22px;
+}
+
+.play_range_chetchik_trebuetsa_value{
+  color:rgb(193, 65, 126);
+  font-style: italic;
+  font-size: 22px;
+}
+/* Правила */
+.play_pravila{
+  background: linear-gradient(rgb(65 47 66), rgb(54, 33, 76));
+  width: 20%;
+  height: var(--height--play_form);
+  border-radius: 20px;
+}
+.play_pravila_name{
+  color: rgb(209, 209, 209);
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;  
+}
