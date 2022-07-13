@@ -1,6 +1,6 @@
 <div class="form_play">
     <!-- Счетчик очков -->
-    <div class="play_chetchik" style="padding-bottom: auto;">
+    <div class="play_chetchik" style="padding-bottom: auto;"> 
         <div class="play_chetchik_raund" style="background: rgb(97, 41, 78);">
             <div class="play_chetchik_raund_number"> 1. </div>
             <div class="play_chetchik_raund_value"> - </div>
@@ -84,14 +84,12 @@
     <div class="play_range_chetchik">
         <div  class="play_range_chetchik_viigrish"  >
             <div class="play_range_chetchik_viigrish_text">ВЫИГРЫШ</div>
-            <div class="play_range_chetchik_viigrish_value">
             <div class="play_range_chetchik_viigrish_value"> 
                 1500
                 <div style="margin-left: 5px;"><img src="img/fishka.png" class="fishki_photo" alt="Фото фишки"></div>
             </div>
         </div>
 
-        <div class="play_range_chetchik_range">
         <div class="play_range_chetchik_range">             
             <div class="play_range_chetchik_range_objee"></div>
             <div class="play_range_chetchik_range_value"></div>
