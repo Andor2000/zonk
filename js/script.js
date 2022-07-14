@@ -56,7 +56,6 @@ function play_stakan_click(){
     stakan_aktive = false;
     play_stakan_animation();
     play_stakan_generator_kub();
-    play_stakan_brosok_kubikov();
   }
 }
 
@@ -64,7 +63,6 @@ function play_stakan_click(){
 function play_stakan_generator_kub() {
   for (var i = 0; i < stakan_kolvo_kubikov; i++) {
     stakan_kubiki_value[i] = Math.floor(Math.random() * 6) + 1;
-    console.log(stakan_kubiki_value[i]);
   }
 }
 
@@ -79,7 +77,8 @@ function play_stakan_animation() {
       setTimeout(play_stakan_rotate, 1500, 0.2, -45);
       setTimeout(play_stakan_rotate, 1700, 0.2, 25);
       setTimeout(play_stakan_rotate, 1900, 0, 0);
-      setTimeout(play_stakan_opacity, 2000)
+      setTimeout(play_stakan_opacity, 2000);
+      setTimeout(brosok_kubikov, 2000);
 }
 // Дерганье стакана
 function play_stakan_rotate(time, grad){
@@ -90,4 +89,10 @@ function play_stakan_rotate(time, grad){
 function play_stakan_opacity() {
   document.getElementById('play_stakan').style.opacity = 0.5;
   document.getElementById('play_stakan_img').style.cursor = "default";
+}
+function brosok_kubikov() {
+  document.getElementById('play_kubik_1').scr = "img/kub_2.png";
+  document.getElementById('play_kubik_form_1').style.display  = 'block';
+  document.getElementById('play_kubik_form_1').style.marginLeft = '15%';
+  document.getElementById('play_kubik_form_1').style.marginTop = '5%';
 }

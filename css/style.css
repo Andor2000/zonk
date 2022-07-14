@@ -323,7 +323,7 @@
   background: rgb(20, 14, 35);
 }
 
-.play_mesto_kubika{
+.play_mesto_for_kubika{
   position: absolute;
   width: 35px;
   height: 35px;
@@ -333,6 +333,7 @@
 }
 
 .play_stakan_img{
+  position: absolute;
   margin-top: 330px;
   margin-left: 240px;
   cursor: pointer;
@@ -345,6 +346,17 @@
   transition: 1s;
 }
 
+.play_kubik{
+  position: relative;
+  width: 15%;
+  margin-left: 65%;
+  margin-top: 80%;
+  display: none;
+}
+
+.play_kubik_photo{
+  width: 100%;
+}
 /* Ползунок набранных очков */
 .play_range_chetchik{
   width: 20%;
