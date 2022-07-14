@@ -69,7 +69,6 @@ function play_stakan_generator_kub() {
 }
 
 function play_stakan_animation() {
-      document.getElementById('play_stakan_img').style.cursor = "default";
       setTimeout(play_stakan_rotate, 0, 0.3, 40);
       setTimeout(play_stakan_rotate, 300, 0.1, -45);
       setTimeout(play_stakan_rotate, 500, 0.2, 25);
@@ -90,4 +89,5 @@ function play_stakan_rotate(time, grad){
 // затемнение стакана
 function play_stakan_opacity() {
   document.getElementById('play_stakan').style.opacity = 0.5;
+  document.getElementById('play_stakan_img').style.cursor = "default";
 }

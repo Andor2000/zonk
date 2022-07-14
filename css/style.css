@@ -2,12 +2,12 @@
   --height--play_form: 480px;
 }
 .body_fon {
-    background: linear-gradient(#461b38 15%, #131230 75%) fixed; 
+    background: linear-gradient(#461b38 15%, #131230 75%) fixed;
     user-select:none; /* запрет выделения слов*/
   }
 
 .container{
-  width: 900px; 
+  width: 900px;
 }
  /* header */
 .header{
@@ -53,7 +53,7 @@
   justify-content: space-between;
 }
 
-.fishki_photo{  
+.fishki_photo{
   pointer-events: none; /* запрет перетаскивания фото*/
   width: 30px;
 }
@@ -63,41 +63,41 @@
   margin-right: 13px;
 }
 /*  тело */
-.main_form{ 
+.main_form{
   text-align: center;
-  
+
 }
 
-.rejimi{ 
+.rejimi{
    display: flex;
    margin-left: auto;
    Justify-content: center;
    margin-top: 80px;
 }
 
-.rejim_form{ 
+.rejim_form{
   width:180px;
   height:270px;
   border-radius: 20px;
   background:rgb(64, 35, 79);
   margin-left: 10px;
-  margin-right: 10px;   
+  margin-right: 10px;
   font-size: 30px;
-  color: rgb(238, 238, 238); 
+  color: rgb(238, 238, 238);
   overflow-wrap: break-word;
 }
 
-.rejim_form_telo{  
+.rejim_form_telo{
   width:180px;
-  height:190px; 
+  height:190px;
   border-radius: 20px 20px 0px 0px;
   background:rgb(64, 35, 79);
   display: block;
   justify-content: center;
-  
+
 }
 
-.rejim_form_photo{  
+.rejim_form_photo{
   pointer-events: none; /* запрет перетаскивания фото*/
   height: 130px;
   margin-left: 10px;
@@ -115,18 +115,18 @@
   background-color: rgb(210, 49, 128);
   border-radius: 30px;
   cursor: pointer;
-  transition: all 0.3s ease 0s; 
+  transition: all 0.3s ease 0s;
   opacity: 1;
   font-size: 26px;
-  color: rgb(238, 238, 238);  
+  color: rgb(238, 238, 238);
   border:none;
 }
- 
+
 .rejim_form_button:hover{
   background-color: rgb(247, 72, 157);
 
 }
-.rejim_form_foot{  
+.rejim_form_foot{
   width:180px;
   height:80px;
   border-radius: 0px 0px 20px 20px;
@@ -141,19 +141,19 @@
 .rejim_form_foot_value{
   height:20px;
   font-size: 26px;
-  margin-bottom: 2px;    
+  margin-bottom: 2px;
   color: rgb(210, 49, 128);
 }
 
 .rejim_form_foot_value_text{
   height:20px;
-  font-size: 18px;   
+  font-size: 18px;
    color: rgb(210, 49, 128);
 
 }
 
 /* Модальное окно риса */
-.rejim_risk_modal_vibor{  
+.rejim_risk_modal_vibor{
   width: 530px;
   height: 500px;
   margin-top: 75px;
@@ -179,7 +179,7 @@
 }
 
 
-.rejim_risk_modal_vibor_name > h5{ 
+.rejim_risk_modal_vibor_name > h5{
   margin-left: 45%;
   color:rgb(255, 255, 255);;
 }
@@ -196,7 +196,7 @@
 
 /* Ползунок выбора ставки */
 .slidecontainer {
-  width: 100%;  
+  width: 100%;
   justify-content: center;
   text-align: center;
 }
@@ -207,9 +207,9 @@
   height: 25px;
   background: rgb(210, 49, 128);
   outline: none;
-  border-radius: 15px; 
+  border-radius: 15px;
 }
- 
+
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -233,7 +233,7 @@
   margin-top: 30px;
   width: 80%;
   justify-content: center;
-  text-align: center;  
+  text-align: center;
   display:flex;
   margin-top: 30px;
   margin-left: auto;
@@ -254,7 +254,7 @@
   margin-top: 3px;
   color:rgb(255, 199, 30);
   font-size: 20px;
-  height: 20px; 
+  height: 20px;
 }
 .rejim_risk_vibor_stavki_value_text{
   color:#ffffff;
@@ -310,10 +310,10 @@
   background-color: rgb(210, 49, 128);
   border-radius: 30px;
   cursor: pointer;
-  transition: all 0.3s ease 0s; 
+  transition: all 0.3s ease 0s;
   opacity: 1;
   font-size: 26px;
-  color: rgb(238, 238, 238);  
+  color: rgb(238, 238, 238);
   border:none;
 }
 /* Игровое поле */
@@ -333,12 +333,12 @@
 }
 
 .play_stakan_img{
-  margin-top: 330px; 
-  margin-left: 240px; 
+  margin-top: 330px;
+  margin-left: 240px;
   cursor: pointer;
 }
 
-.stakan_photo{  
+.stakan_photo{
   pointer-events: none; /* запрет перетаскивания фото*/
   width: 100px;
   z-index: 2;
@@ -346,7 +346,7 @@
 }
 
 /* Ползунок набранных очков */
-.play_range_chetchik{ 
+.play_range_chetchik{
   width: 20%;
   height: var(--height--play_form);
   text-align: center;
@@ -376,7 +376,7 @@
   display: flex;
 }
 
-.play_range_chetchik_range_form{ 
+.play_range_chetchik_range_form{
   height: 100%;
   width: 100%;
   display: flex;
@@ -402,7 +402,7 @@
   position: relative;
 }
 
-.play_range_chetchik_trebuetsa{  
+.play_range_chetchik_trebuetsa{
   height: 15%;
 }
 
@@ -444,7 +444,7 @@
 }
 .play_pravila_prostie_img > img{
   width: 25%;
-  height: 70%; 
+  height: 70%;
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -468,11 +468,11 @@
   width: 60%;
   height: 100%;
   margin-left: 5%;
-  display: flex;  
+  display: flex;
 }
 .play_pravila_slojnoe_img > img{
   width: 25%;
-  height: 70%; 
+  height: 70%;
   margin-top: auto;
   margin-bottom: auto;
   margin-left: 5%;
