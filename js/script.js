@@ -92,7 +92,15 @@ function play_stakan_opacity() {
 }
 function brosok_kubikov() {
   document.getElementById('play_kubik_1').scr = "img/kub_2.png";
+  document.getElementById('play_kubik_2').scr = "img/kub_2.png";
+  document.getElementById('play_kubik_3').scr = "img/kub_2.png";
   document.getElementById('play_kubik_form_1').style.display  = 'block';
   document.getElementById('play_kubik_form_1').style.marginLeft = '15%';
   document.getElementById('play_kubik_form_1').style.marginTop = '5%';
+  document.getElementById('play_kubik_form_2').style.display  = 'block';
+  document.getElementById('play_kubik_form_2').style.marginLeft = '15%';
+  document.getElementById('play_kubik_form_2').style.marginTop = '5%';
+  document.getElementById('play_kubik_form_3').style.display  = 'block';
+  document.getElementById('play_kubik_form_3').style.marginLeft = '15%';
+  document.getElementById('play_kubik_form_3').style.marginTop = '5%';
 }
