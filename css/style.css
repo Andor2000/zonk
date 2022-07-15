@@ -358,14 +358,16 @@
   margin-left: 65%;
   margin-top: 80%;
   visibility: hidden;
+  cursor: pointer;
 }
 
 .play_kubik:hover{
-  background: red;
-  border-radius: 50%;  
+  background: rgb(64, 46, 65);
+  border-radius: 50%;
 }
 
 .play_kubik_photo{
+  pointer-events: none;
   width: 70%;
   margin: 15%;
 }

@@ -26,7 +26,7 @@
       <div class="play_mesto_for_kubika" style="margin-top: 440px; margin-left: 85px;"></div>
       <div class="play_mesto_for_kubika" style="margin-top: 440px; margin-left: 125px;"></div>
       <div class="play_mesto_for_kubika" style="margin-top: 440px; margin-left: 165px;"></div>
-      <div class="play_mesto_for_kubika" style="margin-top: 440px; margin-left: 205px;"></div>    
+      <div class="play_mesto_for_kubika" style="margin-top: 440px; margin-left: 205px;"></div>
     </div>
     <div class="play_stakan">
         <div class="play_stakan_img" onclick="play_stakan_click()" id="play_stakan_img">
@@ -43,6 +43,15 @@
         </div>
         <div class="play_kubik" id="play_kubik_form_3">
             <img src="img/kub_1.png" class="play_kubik_photo" alt="Кубик" id="play_kubik_3">
+        </div>
+        <div class="play_kubik" id="play_kubik_form_4">
+            <img src="img/kub_1.png" class="play_kubik_photo" alt="Кубик" id="play_kubik_4">
+        </div>
+        <div class="play_kubik" id="play_kubik_form_5">
+            <img src="img/kub_1.png" class="play_kubik_photo" alt="Кубик" id="play_kubik_5">
+        </div>
+        <div class="play_kubik" id="play_kubik_form_6">
+            <img src="img/kub_1.png" class="play_kubik_photo" alt="Кубик" id="play_kubik_6">
         </div>
     </div>
 
