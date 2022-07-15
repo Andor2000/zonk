@@ -337,6 +337,7 @@
   margin-top: 330px;
   margin-left: 240px;
   cursor: pointer;
+  z-index: 3;
 }
 
 .stakan_photo{
@@ -353,14 +354,20 @@
 }
 .play_kubik{
   position: absolute;
-  width: 15%;
+  width: 20%;
   margin-left: 65%;
   margin-top: 80%;
-  visibility: visible;
+  visibility: hidden;
+}
+
+.play_kubik:hover{
+  background: red;
+  border-radius: 50%;  
 }
 
 .play_kubik_photo{
-  width: 100%;
+  width: 70%;
+  margin: 15%;
 }
 /* Ползунок набранных очков */
 .play_range_chetchik{
