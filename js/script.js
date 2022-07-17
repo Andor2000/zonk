@@ -6,9 +6,20 @@ let rejim_risk_koef = 1.5;
 let stavka;
 let viigrish;
 // игра
-let stakan_kubiki_value = [];
-let stakan_kolvo_kubikov_v_igre = 6;
+class Kubik {
+  constructor(value, mesto_na_pole_top, mesto_na_pole_left, rotate)
+  {
+    this.value = value;
+    this.mesto_na_pole_top = mesto_na_pole_top;
+    this.mesto_na_pole_left = mesto_na_pole_left;
+    this.rotate = rotate;
+  }
+}
+
+let kubiki_obj = [new Kubik(),new Kubik(),new Kubik(),new Kubik(),new Kubik(),new Kubik()];
+let stakan_kolvo_kubikov_v_igre = 1;
 let stakan_aktive = true;
+
 
 // ползунок в риске
 function range_risk(){
@@ -53,16 +64,14 @@ function rejim_risk_form(){
 // НАЖАЛ НА СТАКАН
 function play_stakan_click(){
   if(stakan_aktive){
+    // document.getElementById('play_stakan').style.opacity = 1;
+    for (var kubik_id = 1; kubik_id <= 6; kubik_id++) { // Кубики в стакан
+      document.getElementById('play_kubik_form_' + kubik_id).style.marginLeft = '72%';
+      document.getElementById('play_kubik_form_' + kubik_id).style.marginTop = '96%';
+      document.getElementById('play_kubik_form_' + kubik_id).style.opacity = 0;
+    }
     // stakan_aktive = false;
     play_stakan_animation();
-    play_stakan_generator_kub();
-  }
-}
-
-
-function play_stakan_generator_kub() {
-  for (var i = 0; i < stakan_kolvo_kubikov; i++) {
-    stakan_kubiki_value[i] = Math.floor(Math.random() * 6) + 1;
   }
 }
 
@@ -77,7 +86,7 @@ function play_stakan_animation() {
       setTimeout(play_stakan_rotate, 1500, 0.2, -45);
       setTimeout(play_stakan_rotate, 1700, 0.2, 25);
       setTimeout(play_stakan_rotate, 1900, 0, 0);
-      setTimeout(play_stakan_opacity, 2000);
+      setTimeout(play_stakan_opacity, 1950);
       setTimeout(brosok_kubikov, 2000);
 }
 // Дерганье стакана
@@ -90,117 +99,127 @@ function play_stakan_opacity() {
   document.getElementById('play_stakan').style.opacity = 0.5;
   document.getElementById('play_stakan_img').style.cursor = "default";
 }
+
 function brosok_kubikov() {
+  let kubik_number = 1;
   let kubik_id = 1;
-  while(kubik_id <= stakan_kolvo_kubikov_v_igre){
-    stakan_kubiki_value[kubik_id] = Math.floor(Math.random() * 6) + 1;
-    document.getElementById('play_kubik_' + kubik_id).src = "img/kub_"+stakan_kubiki_value[kubik_id]+".png";
+  while(kubik_number <= stakan_kolvo_kubikov_v_igre){
+    kubiki_obj[kubik_id].value = Math.floor(Math.random() * 6) + 1;
+    document.getElementById('play_kubik_' + kubik_id).src = "img/kub_" + kubiki_obj[kubik_id].value +".png";
     document.getElementById('play_kubik_form_' + kubik_id).style.visibility  = 'visible';
-    raspolojenie_kubika(stakan_kolvo_kubikov_v_igre - 5, kubik_id);
+    raspolojenie_kubika(stakan_kolvo_kubikov_v_igre, kubik_number, kubik_id);
     document.getElementById('play_kubik_form_' + kubik_id).style.transform = 'rotate('+ (Math.floor(Math.random() * 60) - 30) + 'deg)';
+    document.getElementById('play_kubik_form_' + kubik_id).style.opacity  = 1;
     kubik_id++;
+    kubik_number++;
   }
+  if(stakan_kolvo_kubikov_v_igre != 6)
+    stakan_kolvo_kubikov_v_igre++;
 }
 
-function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik) {
+function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
+  console.log(kolvo_kubikov_v_igre);
   switch (kolvo_kubikov_v_igre) {
     case 6:
-      switch (kubik) {
+      switch (kubik_number) {
         case 1:
-          document.getElementById('play_kubik_form_1').style.marginLeft = '20%';
-          document.getElementById('play_kubik_form_1').style.marginTop = '5%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '20%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '5%';
           break;
         case 2:
-          document.getElementById('play_kubik_form_2').style.marginLeft = '43%';
-          document.getElementById('play_kubik_form_2').style.marginTop = '13%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '43%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '13%';
           break;
         case 3:
-          document.getElementById('play_kubik_form_3').style.marginLeft = '64%';
-          document.getElementById('play_kubik_form_3').style.marginTop = '20%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '64%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '20%';
           break;
         case 4:
-          document.getElementById('play_kubik_form_4').style.marginLeft = '70%';
-          document.getElementById('play_kubik_form_4').style.marginTop = '47%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '70%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '47%';
           break;
         case 5:
-          document.getElementById('play_kubik_form_5').style.marginLeft = '40%';
-          document.getElementById('play_kubik_form_5').style.marginTop = '43%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '40%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '43%';
           break;
         default:
-          document.getElementById('play_kubik_form_6').style.marginLeft = '16%';
-          document.getElementById('play_kubik_form_6').style.marginTop = '32%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '16%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '32%';
       }
       break;
     case 5:
-    switch (kubik) {
+    switch (kubik_number) {
       case 1:
-        document.getElementById('play_kubik_form_1').style.marginLeft = '3%';
-        document.getElementById('play_kubik_form_1').style.marginTop = '24%';
+        kubiki_obj[kubik_id].mesto_na_pole_left = '3%';
+        kubiki_obj[kubik_id].mesto_na_pole_top = '24%';
         break;
       case 2:
-        document.getElementById('play_kubik_form_2').style.marginLeft = '25%';
-        document.getElementById('play_kubik_form_2').style.marginTop = '5%';
+        kubiki_obj[kubik_id].mesto_na_pole_left = '25%';
+        kubiki_obj[kubik_id].mesto_na_pole_top = '5%';
         break;
       case 3:
-        document.getElementById('play_kubik_form_3').style.marginLeft = '62%';
-        document.getElementById('play_kubik_form_3').style.marginTop = '15%';
+        kubiki_obj[kubik_id].mesto_na_pole_left = '62%';
+        kubiki_obj[kubik_id].mesto_na_pole_top = '15%';
         break;
       case 4:
-        document.getElementById('play_kubik_form_4').style.marginLeft = '26%';
-        document.getElementById('play_kubik_form_4').style.marginTop = '42%';
+        kubiki_obj[kubik_id].mesto_na_pole_left = '26%';
+        kubiki_obj[kubik_id].mesto_na_pole_top = '42%';
         break;
       default:
-        document.getElementById('play_kubik_form_5').style.marginLeft = '55%';
-        document.getElementById('play_kubik_form_5').style.marginTop = '38%';
+        kubiki_obj[kubik_id].mesto_na_pole_left = '55%';
+        kubiki_obj[kubik_id].mesto_na_pole_top = '38%';
       }
       break;
     case 4:
-      switch (kubik) {
+      switch (kubik_number) {
         case 1:
-          document.getElementById('play_kubik_form_1').style.marginLeft = '15%';
-          document.getElementById('play_kubik_form_1').style.marginTop = '45%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '15%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '45%';
           break;
         case 2:
-          document.getElementById('play_kubik_form_2').style.marginLeft = '58%';
-          document.getElementById('play_kubik_form_2').style.marginTop = '15%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '58%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '15%';
           break;
         case 3:
-          document.getElementById('play_kubik_form_3').style.marginLeft = '62%';
-          document.getElementById('play_kubik_form_3').style.marginTop = '48%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '62%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '48%';
           break;
         default:
-          document.getElementById('play_kubik_form_4').style.marginLeft = '25%';
-          document.getElementById('play_kubik_form_4').style.marginTop = '5%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '25%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '5%';
         }
       break;
     case 3:
-      switch (kubik) {
+      switch (kubik_number) {
         case 1:
-          document.getElementById('play_kubik_form_1').style.marginLeft = '25%';
-          document.getElementById('play_kubik_form_1').style.marginTop = '5%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '25%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '5%';
           break;
         case 2:
-          document.getElementById('play_kubik_form_2').style.marginLeft = '52%';
-          document.getElementById('play_kubik_form_2').style.marginTop = '15%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '52%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '15%';
           break;
         default:
-          document.getElementById('play_kubik_form_3').style.marginLeft = '27%';
-          document.getElementById('play_kubik_form_3').style.marginTop = '37%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '27%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '37%';
         }
       break;
     case 2:
-      switch (kubik) {
+      switch (kubik_number) {
         case 1:
-          document.getElementById('play_kubik_form_1').style.marginLeft = '46%';
-          document.getElementById('play_kubik_form_1').style.marginTop = '10%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '46%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '10%';
           break;
         default:
-          document.getElementById('play_kubik_form_2').style.marginLeft = '33%';
-          document.getElementById('play_kubik_form_2').style.marginTop = '43%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '33%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '43%';
         }
       break;
     default:
-      document.getElementById('play_kubik_form_1').style.marginLeft = '32%';
-      document.getElementById('play_kubik_form_1').style.marginTop = '17%';
+      kubiki_obj[kubik_id].mesto_na_pole_left = '32%';
+      kubiki_obj[kubik_id].mesto_na_pole_top = '17%';
   }
+  document.getElementById('play_kubik_form_' + kubik_id).style.marginLeft = kubiki_obj[kubik_id].mesto_na_pole_left;
+  document.getElementById('play_kubik_form_' + kubik_id).style.marginTop = kubiki_obj[kubik_id].mesto_na_pole_top;
+
 }
