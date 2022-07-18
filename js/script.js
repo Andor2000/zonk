@@ -7,12 +7,13 @@ let stavka;
 let viigrish;
 // игра
 class Kubik {
-  constructor(value, mesto_na_pole_top, mesto_na_pole_left, rotate)
+  constructor(value, mesto_na_pole_top, mesto_na_pole_left, rotate, v_igre)
   {
     this.value = value;
     this.mesto_na_pole_top = mesto_na_pole_top;
     this.mesto_na_pole_left = mesto_na_pole_left;
     this.rotate = rotate;
+    this.v_igre = v_igre;
   }
 }
 
@@ -61,7 +62,9 @@ function rejim_risk_form(){
     document.getElementById("risk_viigrish_text").textContent = viigrish;
 }
 
+////////////////////////////////////////////
 // НАЖАЛ НА СТАКАН
+////////////////////////////////////////////
 function play_stakan_click(){
   if(stakan_aktive){
     // document.getElementById('play_stakan').style.opacity = 1;
@@ -105,11 +108,16 @@ function brosok_kubikov() {
   let kubik_id = 0;
   while(kubik_number < stakan_kolvo_kubikov_v_igre){
     kubiki_obj[kubik_id].value = Math.floor(Math.random() * 6) + 1;
+    kubiki_obj[kubik_id].rotate = 'rotate('+ (Math.floor(Math.random() * 60) - 30) + 'deg)';
+    kubiki_obj[kubik_id].v_igre = true;
+
+    raspolojenie_kubika(stakan_kolvo_kubikov_v_igre, kubik_number, kubik_id);
+    document.getElementById('play_kubik_form_' + kubik_id).style.transform = kubiki_obj[kubik_id].rotate;
     document.getElementById('play_kubik_' + kubik_id).src = "img/kub_" + kubiki_obj[kubik_id].value +".png";
     document.getElementById('play_kubik_form_' + kubik_id).style.visibility  = 'visible';
-    raspolojenie_kubika(stakan_kolvo_kubikov_v_igre, kubik_number, kubik_id);
-    document.getElementById('play_kubik_form_' + kubik_id).style.transform = 'rotate('+ (Math.floor(Math.random() * 60) - 30) + 'deg)';
     document.getElementById('play_kubik_form_' + kubik_id).style.opacity  = 1;
+
+
     kubik_id++;
     kubik_number++;
   }
@@ -122,23 +130,23 @@ function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
   switch (kolvo_kubikov_v_igre) {
     case 6:
       switch (kubik_number) {
-        case 1:
+        case 0:
           kubiki_obj[kubik_id].mesto_na_pole_left = '20%';
           kubiki_obj[kubik_id].mesto_na_pole_top = '5%';
           break;
-        case 2:
+        case 1:
           kubiki_obj[kubik_id].mesto_na_pole_left = '43%';
           kubiki_obj[kubik_id].mesto_na_pole_top = '13%';
           break;
-        case 3:
+        case 2:
           kubiki_obj[kubik_id].mesto_na_pole_left = '64%';
           kubiki_obj[kubik_id].mesto_na_pole_top = '20%';
           break;
-        case 4:
+        case 3:
           kubiki_obj[kubik_id].mesto_na_pole_left = '70%';
           kubiki_obj[kubik_id].mesto_na_pole_top = '47%';
           break;
-        case 5:
+        case 4:
           kubiki_obj[kubik_id].mesto_na_pole_left = '40%';
           kubiki_obj[kubik_id].mesto_na_pole_top = '43%';
           break;
@@ -149,19 +157,19 @@ function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
       break;
     case 5:
     switch (kubik_number) {
-      case 1:
+      case 0:
         kubiki_obj[kubik_id].mesto_na_pole_left = '3%';
         kubiki_obj[kubik_id].mesto_na_pole_top = '24%';
         break;
-      case 2:
+      case 1:
         kubiki_obj[kubik_id].mesto_na_pole_left = '25%';
         kubiki_obj[kubik_id].mesto_na_pole_top = '5%';
         break;
-      case 3:
+      case 2:
         kubiki_obj[kubik_id].mesto_na_pole_left = '62%';
         kubiki_obj[kubik_id].mesto_na_pole_top = '15%';
         break;
-      case 4:
+      case 3:
         kubiki_obj[kubik_id].mesto_na_pole_left = '26%';
         kubiki_obj[kubik_id].mesto_na_pole_top = '42%';
         break;
@@ -172,15 +180,15 @@ function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
       break;
     case 4:
       switch (kubik_number) {
-        case 1:
+        case 0:
           kubiki_obj[kubik_id].mesto_na_pole_left = '15%';
           kubiki_obj[kubik_id].mesto_na_pole_top = '45%';
           break;
-        case 2:
+        case 1:
           kubiki_obj[kubik_id].mesto_na_pole_left = '58%';
           kubiki_obj[kubik_id].mesto_na_pole_top = '15%';
           break;
-        case 3:
+        case 2:
           kubiki_obj[kubik_id].mesto_na_pole_left = '62%';
           kubiki_obj[kubik_id].mesto_na_pole_top = '48%';
           break;
@@ -191,11 +199,11 @@ function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
       break;
     case 3:
       switch (kubik_number) {
-        case 1:
+        case 0:
           kubiki_obj[kubik_id].mesto_na_pole_left = '25%';
           kubiki_obj[kubik_id].mesto_na_pole_top = '5%';
           break;
-        case 2:
+        case 1:
           kubiki_obj[kubik_id].mesto_na_pole_left = '52%';
           kubiki_obj[kubik_id].mesto_na_pole_top = '15%';
           break;
@@ -206,7 +214,7 @@ function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
       break;
     case 2:
       switch (kubik_number) {
-        case 1:
+        case 0:
           kubiki_obj[kubik_id].mesto_na_pole_left = '46%';
           kubiki_obj[kubik_id].mesto_na_pole_top = '10%';
           break;
@@ -221,5 +229,13 @@ function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
   }
   document.getElementById('play_kubik_form_' + kubik_id).style.marginLeft = kubiki_obj[kubik_id].mesto_na_pole_left;
   document.getElementById('play_kubik_form_' + kubik_id).style.marginTop = kubiki_obj[kubik_id].mesto_na_pole_top;
+
+}
+////////////////////////////////////////////
+// НАЖАЛ НА КУБИК
+////////////////////////////////////////////
+
+function play_kubik_click(kubik_id) {
+  console.log(kubik_id);
 
 }
