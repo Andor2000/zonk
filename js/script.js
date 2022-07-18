@@ -181,8 +181,8 @@ function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
     case 4:
       switch (kubik_number) {
         case 0:
-          kubiki_obj[kubik_id].mesto_na_pole_left = '15%';
-          kubiki_obj[kubik_id].mesto_na_pole_top = '45%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '25%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '5%';
           break;
         case 1:
           kubiki_obj[kubik_id].mesto_na_pole_left = '58%';
@@ -193,8 +193,8 @@ function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
           kubiki_obj[kubik_id].mesto_na_pole_top = '48%';
           break;
         default:
-          kubiki_obj[kubik_id].mesto_na_pole_left = '25%';
-          kubiki_obj[kubik_id].mesto_na_pole_top = '5%';
+          kubiki_obj[kubik_id].mesto_na_pole_left = '15%';
+          kubiki_obj[kubik_id].mesto_na_pole_top = '45%';
         }
       break;
     case 3:
