@@ -65,7 +65,7 @@ function rejim_risk_form(){
 function play_stakan_click(){
   if(stakan_aktive){
     // document.getElementById('play_stakan').style.opacity = 1;
-    for (var kubik_id = 1; kubik_id <= 6; kubik_id++) { // Кубики в стакан
+    for (var kubik_id = 0; kubik_id < 6; kubik_id++) { // Кубики в стакан
       document.getElementById('play_kubik_form_' + kubik_id).style.marginLeft = '72%';
       document.getElementById('play_kubik_form_' + kubik_id).style.marginTop = '96%';
       document.getElementById('play_kubik_form_' + kubik_id).style.opacity = 0;
@@ -101,9 +101,9 @@ function play_stakan_opacity() {
 }
 
 function brosok_kubikov() {
-  let kubik_number = 1;
-  let kubik_id = 1;
-  while(kubik_number <= stakan_kolvo_kubikov_v_igre){
+  let kubik_number = 0;
+  let kubik_id = 0;
+  while(kubik_number < stakan_kolvo_kubikov_v_igre){
     kubiki_obj[kubik_id].value = Math.floor(Math.random() * 6) + 1;
     document.getElementById('play_kubik_' + kubik_id).src = "img/kub_" + kubiki_obj[kubik_id].value +".png";
     document.getElementById('play_kubik_form_' + kubik_id).style.visibility  = 'visible';
@@ -113,7 +113,7 @@ function brosok_kubikov() {
     kubik_id++;
     kubik_number++;
   }
-  if(stakan_kolvo_kubikov_v_igre != 6)
+  if(stakan_kolvo_kubikov_v_igre < 6)
     stakan_kolvo_kubikov_v_igre++;
 }
 

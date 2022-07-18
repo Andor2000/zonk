@@ -48,6 +48,9 @@
     </div>
 
     <div class="play_kubiki_na_pole">
+        <div class="play_kubik" id="play_kubik_form_0">
+            <img src="img/kub_1.png" class="play_kubik_photo" alt="Кубик" id="play_kubik_0">
+        </div>
         <div class="play_kubik" id="play_kubik_form_1">
             <img src="img/kub_1.png" class="play_kubik_photo" alt="Кубик" id="play_kubik_1">
         </div>
@@ -62,9 +65,6 @@
         </div>
         <div class="play_kubik" id="play_kubik_form_5">
             <img src="img/kub_1.png" class="play_kubik_photo" alt="Кубик" id="play_kubik_5">
-        </div>
-        <div class="play_kubik" id="play_kubik_form_6">
-            <img src="img/kub_1.png" class="play_kubik_photo" alt="Кубик" id="play_kubik_6">
         </div>
     </div>
 
