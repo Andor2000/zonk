@@ -20,7 +20,7 @@ class Kubik {
 let kubiki_obj = [new Kubik(),new Kubik(),new Kubik(),new Kubik(),new Kubik(),new Kubik()];
 let stakan_kolvo_kubikov_v_igre = 1;
 let stakan_aktive = true;
-
+let raund = 1;
 
 // ползунок в риске
 function range_risk(){
@@ -237,5 +237,8 @@ function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
 
 function play_kubik_click(kubik_id) {
   console.log(kubik_id);
-
+  document.getElementById('play_kubik_form_' + kubik_id).style.marginLeft = '0%';
+  document.getElementById('play_kubik_form_' + kubik_id).style.marginTop = '122%';
+  document.getElementById('play_kubik_form_' + kubik_id).style.transform = 'rotate(0deg)';
+  console.log(kubiki_obj[kubik_id].rotate);
 }

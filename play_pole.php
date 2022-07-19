@@ -1,44 +1,32 @@
 <!-- Игровое поле -->
 <div class="play_pole">
   <div class="play_mesto_for_kubikov">
-      <div class="play_mesto_for_kubika_raund">
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_61"></div>
-      </div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_61" style="margin-top: 10%; margin-left: 2%;"></div>
 
-      <div class="play_mesto_for_kubika_raund">
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_51"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_52"></div>
-      </div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_51" style="margin-top: 1%; margin-left: 2%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_52" style="margin-top: -12%; margin-left: 15%;"></div>
 
-      <div class="play_mesto_for_kubika_raund">
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_41"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_42"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_43"></div>
-      </div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_41" style="margin-top: 1%; margin-left: 2%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_42" style="margin-top: -12%; margin-left: 15%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_43" style="margin-top: -12%; margin-left: 28%;"></div>
 
-      <div class="play_mesto_for_kubika_raund">
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_31"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_32"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_33"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_34"></div>
-      </div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_31" style="margin-top: 1%; margin-left: 2%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_32" style="margin-top: -12%; margin-left: 15%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_33" style="margin-top: -12%; margin-left: 28%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_34" style="margin-top: -12%; margin-left: 41%;"></div>
 
-      <div class="play_mesto_for_kubika_raund">
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_21"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_22"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_23"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_24"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_25"></div>
-      </div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_21" style="margin-top: 1%; margin-left: 2%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_22" style="margin-top: -12%; margin-left: 15%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_23" style="margin-top: -12%; margin-left: 28%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_24" style="margin-top: -12%; margin-left: 41%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_25" style="margin-top: -12%; margin-left: 54%;"></div>
 
-      <div class="play_mesto_for_kubika_raund">
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_11"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_12"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_13"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_14"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_15"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_16"></div>
-      </div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_11" style="margin-top: 1%; margin-left: 2%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_12" style="margin-top: -12%; margin-left: 15%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_13" style="margin-top: -12%; margin-left: 28%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_14" style="margin-top: -12%; margin-left: 41%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_15" style="margin-top: -12%; margin-left: 54%;"></div>
+        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_16" style="margin-top: -12%; margin-left: 67%;"></div>
 
     </div>
     <div class="play_stakan">
