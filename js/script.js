@@ -234,8 +234,73 @@ function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
 ////////////////////////////////////////////
 // НАЖАЛ НА КУБИК
 ////////////////////////////////////////////
-
+let number = 1;
+let ran = 6;
 function play_kubik_click(kubik_id) {
-  console.log(kubik_id);
+  if(kubiki_obj[kubik_id].v_igre)
+  {
+    play_kubik_form(ran, number, kubik_id);
+    document.getElementById('play_kubik_form_' + kubik_id).style.width = '9%';
+    document.getElementById('play_kubik_' + kubik_id).style.width = '100%';
+    document.getElementById('play_kubik_' + kubik_id).style.margin = '0%';
+    document.getElementById('play_kubik_form_' + kubik_id).style.transform = 'rotate(0deg)';
+    number++;
+    ran--;
+    kubiki_obj[kubik_id].v_igre = false;
+  }
+  else {
+    document.getElementById('play_kubik_form_' + kubik_id).style.marginLeft = kubiki_obj[kubik_id].mesto_na_pole_left;
+    document.getElementById('play_kubik_form_' + kubik_id).style.marginTop = kubiki_obj[kubik_id].mesto_na_pole_top;
+    document.getElementById('play_kubik_form_' + kubik_id).style.width = '20%';
+    document.getElementById('play_kubik_' + kubik_id).style.width = '70%';
+    document.getElementById('play_kubik_' + kubik_id).style.margin = '15%';
+    document.getElementById('play_kubik_form_' + kubik_id).style.transform = kubiki_obj[kubik_id].rotate;
+    kubiki_obj[kubik_id].v_igre = true;
+  }
+}
+
+function play_kubik_form(raund, kubik_number, kubik_id) {
+  let top;
+  let left;
+  switch (raund) {
+    case 1:
+      top = '124.5%';
+      break;
+    case 2:
+      top = '113.5%';
+      break;
+    case 3:
+      top = '102.5%';
+      break;
+    case 4:
+      top = '91.5%';
+      break;
+    case 5:
+      top = '80.5%';
+      break;
+    default:
+      top = '69.5%';
+  }
+  switch (kubik_number) {
+    case 1:
+      left = '3.5%';
+      break;
+    case 2:
+      left = '14.5%';
+      break;
+    case 3:
+      left = '25.4%';
+      break;
+    case 4:
+      left = '36.4%';
+      break;
+    case 5:
+      left = '47.1%';
+      break;
+    default:
+      left = '58.2%';
+  }
+    document.getElementById('play_kubik_form_' + kubik_id).style.marginLeft = left;
+    document.getElementById('play_kubik_form_' + kubik_id).style.marginTop = top;
 
 }
