@@ -18,9 +18,17 @@ class Kubik {
 }
 
 let kubiki_obj = [new Kubik(),new Kubik(),new Kubik(),new Kubik(),new Kubik(),new Kubik()];
-let stakan_kolvo_kubikov_v_igre = 1;
+let stakan_kolvo_kubikov_v_igre = 6;
 let stakan_aktive = true;
+let raund = 0;
+let number_v_forme = 1;
 
+kubiki_obj[0].v_igre = true;
+kubiki_obj[1].v_igre = true;
+kubiki_obj[2].v_igre = true;
+kubiki_obj[3].v_igre = true;
+kubiki_obj[4].v_igre = true;
+kubiki_obj[5].v_igre = true;
 
 // ползунок в риске
 function range_risk(){
@@ -69,11 +77,15 @@ function play_stakan_click(){
   if(stakan_aktive){
     // document.getElementById('play_stakan').style.opacity = 1;
     for (var kubik_id = 0; kubik_id < 6; kubik_id++) { // Кубики в стакан
-      document.getElementById('play_kubik_form_' + kubik_id).style.marginLeft = '72%';
-      document.getElementById('play_kubik_form_' + kubik_id).style.marginTop = '96%';
-      document.getElementById('play_kubik_form_' + kubik_id).style.opacity = 0;
+      if(kubiki_obj[kubik_id].v_igre){
+        document.getElementById('play_kubik_form_' + kubik_id).style.marginLeft = '72%';
+        document.getElementById('play_kubik_form_' + kubik_id).style.marginTop = '96%';
+        document.getElementById('play_kubik_form_' + kubik_id).style.opacity = 0;
+      }
     }
     // stakan_aktive = false;
+    raund++;
+    number_v_forme = 1;
     play_stakan_animation();
   }
 }
@@ -107,22 +119,23 @@ function brosok_kubikov() {
   let kubik_number = 0;
   let kubik_id = 0;
   while(kubik_number < stakan_kolvo_kubikov_v_igre){
-    kubiki_obj[kubik_id].value = Math.floor(Math.random() * 6) + 1;
-    kubiki_obj[kubik_id].rotate = 'rotate('+ (Math.floor(Math.random() * 60) - 30) + 'deg)';
-    kubiki_obj[kubik_id].v_igre = true;
+    while(!kubiki_obj[kubik_id].v_igre){
+      kubik_id++;
+    }
+    if(kubiki_obj[kubik_id].v_igre){
+      kubiki_obj[kubik_id].value = Math.floor(Math.random() * 6) + 1;
+      kubiki_obj[kubik_id].rotate = 'rotate('+ (Math.floor(Math.random() * 60) - 30) + 'deg)';
+      kubiki_obj[kubik_id].v_igre = true;
 
-    raspolojenie_kubika(stakan_kolvo_kubikov_v_igre, kubik_number, kubik_id);
-    document.getElementById('play_kubik_form_' + kubik_id).style.transform = kubiki_obj[kubik_id].rotate;
-    document.getElementById('play_kubik_' + kubik_id).src = "img/kub_" + kubiki_obj[kubik_id].value +".png";
-    document.getElementById('play_kubik_form_' + kubik_id).style.visibility  = 'visible';
-    document.getElementById('play_kubik_form_' + kubik_id).style.opacity  = 1;
-
-
+      raspolojenie_kubika(stakan_kolvo_kubikov_v_igre, kubik_number, kubik_id);
+      document.getElementById('play_kubik_form_' + kubik_id).style.transform = kubiki_obj[kubik_id].rotate;
+      document.getElementById('play_kubik_' + kubik_id).src = "img/kub_" + kubiki_obj[kubik_id].value +".png";
+      document.getElementById('play_kubik_form_' + kubik_id).style.visibility  = 'visible';
+      document.getElementById('play_kubik_form_' + kubik_id).style.opacity  = 1;
+    }
     kubik_id++;
     kubik_number++;
   }
-  if(stakan_kolvo_kubikov_v_igre < 6)
-    stakan_kolvo_kubikov_v_igre++;
 }
 
 function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
@@ -234,19 +247,18 @@ function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
 ////////////////////////////////////////////
 // НАЖАЛ НА КУБИК
 ////////////////////////////////////////////
-let number = 1;
-let ran = 6;
 function play_kubik_click(kubik_id) {
   if(kubiki_obj[kubik_id].v_igre)
   {
-    play_kubik_form(ran, number, kubik_id);
+    play_kubik_form(raund, number_v_forme, kubik_id);
     document.getElementById('play_kubik_form_' + kubik_id).style.width = '9%';
     document.getElementById('play_kubik_' + kubik_id).style.width = '100%';
     document.getElementById('play_kubik_' + kubik_id).style.margin = '0%';
     document.getElementById('play_kubik_form_' + kubik_id).style.transform = 'rotate(0deg)';
-    number++;
-    ran--;
     kubiki_obj[kubik_id].v_igre = false;
+    stakan_kolvo_kubikov_v_igre--;
+    number_v_forme++;
+    console.log(number_v_forme);
   }
   else {
     document.getElementById('play_kubik_form_' + kubik_id).style.marginLeft = kubiki_obj[kubik_id].mesto_na_pole_left;
@@ -256,6 +268,8 @@ function play_kubik_click(kubik_id) {
     document.getElementById('play_kubik_' + kubik_id).style.margin = '15%';
     document.getElementById('play_kubik_form_' + kubik_id).style.transform = kubiki_obj[kubik_id].rotate;
     kubiki_obj[kubik_id].v_igre = true;
+    stakan_kolvo_kubikov_v_igre++;
+    number_v_forme--;
   }
 }
 
