@@ -7,28 +7,32 @@ let stavka;
 let viigrish;
 // игра
 class Kubik {
-  constructor(value, mesto_na_pole_top, mesto_na_pole_left, rotate, v_igre)
+  constructor(value, mesto_na_pole_top, mesto_na_pole_left, rotate, v_igre, metso_in_form)
   {
     this.value = value;
     this.mesto_na_pole_top = mesto_na_pole_top;
     this.mesto_na_pole_left = mesto_na_pole_left;
     this.rotate = rotate;
     this.v_igre = v_igre;
+    this.metso_in_form = metso_in_form;
   }
 }
 
-let kubiki_obj = [new Kubik(),new Kubik(),new Kubik(),new Kubik(),new Kubik(),new Kubik()];
 let stakan_kolvo_kubikov_v_igre = 6;
 let stakan_aktive = true;
 let raund = 0;
-let number_v_forme = 1;
+let number_v_forme = 0; // ячейка по счету в форме
+let mas_form = [-1,-1,-1,-1,-1,-1];
 
+let kubiki_obj = [new Kubik(),new Kubik(),new Kubik(),new Kubik(),new Kubik(),new Kubik()];
 kubiki_obj[0].v_igre = true;
 kubiki_obj[1].v_igre = true;
 kubiki_obj[2].v_igre = true;
 kubiki_obj[3].v_igre = true;
 kubiki_obj[4].v_igre = true;
 kubiki_obj[5].v_igre = true;
+
+
 
 // ползунок в риске
 function range_risk(){
@@ -84,8 +88,9 @@ function play_stakan_click(){
       }
     }
     // stakan_aktive = false;
+    mas_form = [-1,-1,-1,-1,-1,-1];
     raund++;
-    number_v_forme = 1;
+    number_v_forme = 0;
     play_stakan_animation();
   }
 }
@@ -139,7 +144,6 @@ function brosok_kubikov() {
 }
 
 function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
-  console.log(kolvo_kubikov_v_igre);
   switch (kolvo_kubikov_v_igre) {
     case 6:
       switch (kubik_number) {
@@ -248,17 +252,19 @@ function raspolojenie_kubika(kolvo_kubikov_v_igre, kubik_number, kubik_id) {
 // НАЖАЛ НА КУБИК
 ////////////////////////////////////////////
 function play_kubik_click(kubik_id) {
-  if(kubiki_obj[kubik_id].v_igre)
+  if(kubiki_obj[kubik_id].v_igre) // в игре - на поле
   {
-    play_kubik_form(raund, number_v_forme, kubik_id);
     document.getElementById('play_kubik_form_' + kubik_id).style.width = '9%';
     document.getElementById('play_kubik_' + kubik_id).style.width = '100%';
     document.getElementById('play_kubik_' + kubik_id).style.margin = '0%';
     document.getElementById('play_kubik_form_' + kubik_id).style.transform = 'rotate(0deg)';
     kubiki_obj[kubik_id].v_igre = false;
+    kubiki_obj[kubik_id].metso_in_form = number_v_forme;
     stakan_kolvo_kubikov_v_igre--;
-    number_v_forme++;
-    console.log(number_v_forme);
+    mas_form[number_v_forme] = kubik_id;
+    play_kubik_form(raund, number_v_forme, kubik_id); // в нижнюю форму
+    //play_kubik_form_raspolojenie();
+    number_v_forme++; // по счету в раунде
   }
   else {
     document.getElementById('play_kubik_form_' + kubik_id).style.marginLeft = kubiki_obj[kubik_id].mesto_na_pole_left;
@@ -267,13 +273,40 @@ function play_kubik_click(kubik_id) {
     document.getElementById('play_kubik_' + kubik_id).style.width = '70%';
     document.getElementById('play_kubik_' + kubik_id).style.margin = '15%';
     document.getElementById('play_kubik_form_' + kubik_id).style.transform = kubiki_obj[kubik_id].rotate;
-    kubiki_obj[kubik_id].v_igre = true;
-    stakan_kolvo_kubikov_v_igre++;
-    number_v_forme--;
+    kubiki_obj[kubik_id].v_igre = true;   // вернуть кубик в игру
+    stakan_kolvo_kubikov_v_igre++;        // количество кубиков в игре
+    number_v_forme--;                     // номер в форме
+    mas_form[kubiki_obj[kubik_id].metso_in_form] = -1;   // массив
+
+    
+    // сместить кубики после
+    for (var i = kubiki_obj[kubik_id].metso_in_form; i < 5; i++){
+      if(mas_form[i + 1] >= 0){
+        mas_form[i] = mas_form[i + 1];
+        kubiki_obj[mas_form[i]].metso_in_form = i;
+        mas_form[i + 1] = -1;
+        play_kubik_form(raund, i, mas_form[i]);
+      }
+    }
+
   }
 }
 
-function play_kubik_form(raund, kubik_number, kubik_id) {
+function play_kubik_form_raspolojenie() {
+    for (var i = 0; i < number_v_forme - 1; i++) {
+        for (var j = 0; j < number_v_forme - 1 - i; j++) {
+            if(kubiki_obj[mas_form[j]] > kubiki_obj[mas_form[j + 1]]){
+              var swap = mas_form[j];
+              mas_form[j] = mas_form[j + 1];
+              mas_form[j + 1] = swap;
+            }
+        }
+    }
+    console.log(mas_form);
+    // Дописать, я отсортировал (вроде) надо задать новые положения кубиков в форме
+}
+
+function play_kubik_form(raund, kubik_number_in_form, kubik_id) {
   let top;
   let left;
   switch (raund) {
@@ -295,20 +328,20 @@ function play_kubik_form(raund, kubik_number, kubik_id) {
     default:
       top = '69.5%';
   }
-  switch (kubik_number) {
-    case 1:
+  switch (kubik_number_in_form) {
+    case 0:
       left = '3.5%';
       break;
-    case 2:
+    case 1:
       left = '14.5%';
       break;
-    case 3:
+    case 2:
       left = '25.4%';
       break;
-    case 4:
+    case 3:
       left = '36.4%';
       break;
-    case 5:
+    case 4:
       left = '47.1%';
       break;
     default:
@@ -316,5 +349,4 @@ function play_kubik_form(raund, kubik_number, kubik_id) {
   }
     document.getElementById('play_kubik_form_' + kubik_id).style.marginLeft = left;
     document.getElementById('play_kubik_form_' + kubik_id).style.marginTop = top;
-
 }
