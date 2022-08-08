@@ -344,6 +344,14 @@
   border-radius: 5px;
   display: flex;
 }
+
+.play_mesto_for_kubika_raund_ochki{
+  color: #ffffff;
+  position: relative;
+  margin-top: -70%;
+  visibility: hidden;
+}
+
 .play_stakan{
   /* position: absolute;
   width: 100%;
@@ -369,7 +377,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  margin-top: -130%;
+  margin-top: -125%;
 }
 .play_kubik{
   position: absolute;

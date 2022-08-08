@@ -2,45 +2,54 @@
 <div class="play_pole">
   <div class="play_mesto_for_kubikov">
       <div class="play_mesto_for_kubika_raund">
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_61"></div>
+        <div class="play_mesto_for_kubika"></div>
       </div>
 
       <div class="play_mesto_for_kubika_raund">
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_51"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_52"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
       </div>
 
       <div class="play_mesto_for_kubika_raund">
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_41"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_42"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_43"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
       </div>
 
       <div class="play_mesto_for_kubika_raund">
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_31"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_32"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_33"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_34"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
       </div>
 
       <div class="play_mesto_for_kubika_raund">
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_21"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_22"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_23"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_24"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_25"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
       </div>
 
       <div class="play_mesto_for_kubika_raund">
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_11"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_12"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_13"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_14"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_15"></div>
-        <div class="play_mesto_for_kubika" id="play_mesto_for_kubika_16"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
+        <div class="play_mesto_for_kubika"></div>
       </div>
-
     </div>
+
+    <div class="play_mesto_for_kubika_raund_ochki">
+      <div id="play_mesto_for_kubika_raund_ochki_r_5" style="margin-left: 15%; margin-top: 4%">0</div>
+      <div id="play_mesto_for_kubika_raund_ochki_r_4" style="margin-left: 26%; margin-top: 4%">0</div>
+      <div id="play_mesto_for_kubika_raund_ochki_r_3" style="margin-left: 37%; margin-top: 4%">0</div>
+      <div id="play_mesto_for_kubika_raund_ochki_r_2" style="margin-left: 47%; margin-top: 4%">0</div>
+      <div id="play_mesto_for_kubika_raund_ochki_r_1" style="margin-left: 58%; margin-top: 4%">0</div>
+      <div id="play_mesto_for_kubika_raund_ochki_r_0" style="margin-left: 69%; margin-top: 4%">0</div>
+    </div>
+
     <div class="play_stakan">
         <div class="play_stakan_img" onclick="play_stakan_click()" id="play_stakan_img">
             <img src="img/stakan.png" class="stakan_photo" alt="Стакан" id="play_stakan">

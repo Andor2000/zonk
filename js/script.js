@@ -265,6 +265,7 @@ function play_kubik_click(kubik_id) {
     play_kubik_form(raund, number_v_forme, kubik_id); // в нижнюю форму
     play_kubik_form_raspolojenie();
     number_v_forme++; // по счету в раунде
+    play_kubik_form_ochki();
   }
   else {
     let numbers = new Set(mas_form);
@@ -289,7 +290,20 @@ function play_kubik_click(kubik_id) {
           play_kubik_form(raund, i, mas_form[i]);
         }
       }
+      play_kubik_form_ochki();
     }
+  }
+}
+
+function play_kubik_form_ochki() {
+  let mas_kub_value = [0,0,0,0,0,0];
+  for (var i = 0; i < number_v_forme; i++) {
+    mas_kub_value[kubiki_obj[mas_form[i]].value - 1]++;
+  }
+  console.log(mas_kub_value);
+  if(mas_kub_value[0] == 1 && mas_kub_value[1] == 1 &&mas_kub_value[2] == 1 &&mas_kub_value[3] == 1 &&mas_kub_value[4] == 1 &&mas_kub_value[5] == 1){
+
+    return;
   }
 }
 
